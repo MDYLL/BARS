@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h3>Siths</h3>
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit"/>
+</form>
+{% for data in quest_list %}
+<div>
+    {{ data }}
+    {% ifequal data '\n' %}
+    <br>
+    {% endifequal %}
+</div>
+{% endfor %}
+{% endblock %}

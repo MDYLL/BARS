@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h3>New Recruits</h3>
+{% if recruit %}
+<div>
+    <form method="POST" class="quest-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn1 btn-default">Save</button>
+    </form>
+</div>
+{% else %}
+<div>
+    <form method="POST" class="recruit-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</div>
+{% endif %}
+
+
+{% endblock %}
